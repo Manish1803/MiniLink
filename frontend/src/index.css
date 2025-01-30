@@ -1,9 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
+/* Root variables */
 :root {
   --color-primary: #1b48da;
   --color-red: #eb0d0d;
   --color-text: #3b3c51;
+  --color-input: #b3b3b3;
+  --color-light-text: #a0a0a0;
+  --color-border: #f6f6f6;
+  --color-bg: #eff6ff;
+
+  --color-active: #1eb036;
+  --color-inactive: #b0901e;
+
+  --transition: all 0.3s ease-in-out;
+  --shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -16,6 +27,9 @@ html,
 body {
   height: 100%;
   width: 100%;
+  font-family: "Manrope", sans-serif;
+  background-color: #fff;
+  color: var(--color-text);
 }
 
 html {
@@ -23,12 +37,59 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
-  background-color: #fff;
-  color: var(--color-text);
+  font-weight: 400;
 }
 
+ul {
+  list-style: none;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+input:focus,
+button:focus,
+textarea:focus {
+  outline: 1px solid var(--color-primary);
+  transition: var(--transition);
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Toastify */
 .Toastify__toast--success .Toastify__toast-icon svg {
   fill: var(--color-primary);
+}
+
+/* Media Queries */
+@media (max-width: 55em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .Toastify__toast-container {
+    width: 60% !important;
+    bottom: 1.5rem !important;
+    left: 1rem !important;
+  }
+}
+
+@media (max-width: 30em) {
+  html {
+    font-size: 50%;
+  }
 }
