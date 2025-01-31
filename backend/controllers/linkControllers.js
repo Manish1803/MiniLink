@@ -33,13 +33,14 @@ exports.getAnalyticsSummary = async (req, res) => {
       else deviceWiseClicks.other += 1;
     });
 
-    let sumCount = 0;
+    let totalCount = 0;
     const dateWiseClicksArray = Object.entries(dateWiseClicks)
-      .sort((a, b) => b.date.localeCompare(a.date))
+      .sort((a, b) => a[0].localeCompare(b[0]))
       .map(([date, count]) => {
-        sumCount += count;
-        return { date, count: sumCount };
-      });
+        totalCount += count;
+        return { date, count: totalCount };
+      })
+      .reverse();
 
     const deviceWiseClickArray = [
       { device: "Dasktop", count: deviceWiseClicks.desktop },
