@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.login {
+  padding-top: 4rem;
+}
+
+.inputContainer input {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: transparent;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.inputContainer .error {
+  display: block;
+  color: #dc2626;
+  font-size: 1.2rem;
+  height: 1.2rem;
+  margin-left: 1rem;
+}
+
+.btn {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
