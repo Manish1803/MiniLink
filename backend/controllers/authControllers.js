@@ -40,7 +40,7 @@ exports.register = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: error.message,
+      message: error.message || "Registration failed",
     });
   }
 };
@@ -79,7 +79,7 @@ exports.login = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: error.message,
+      message: error.message || "Login failed",
     });
   }
 };
@@ -93,7 +93,7 @@ exports.logout = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: error.message,
+      message: error.message || "Logout failed",
     });
   }
 };
@@ -107,7 +107,7 @@ exports.deleteAccount = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: error.message,
+      message: error.message || "Account deletion failed",
     });
   }
 };
@@ -157,7 +157,7 @@ exports.updateProfile = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: error.message,
+      message: error.message || "Profile update failed",
     });
   }
 };
