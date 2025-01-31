@@ -1,0 +1,46 @@
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.formContainer {
+  width: 40rem;
+  max-width: 40rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.input {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  color: var(--color-text);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.empty {
+  grid-row: 4;
+  grid-column: 1/3;
+  padding: 2rem;
+}
+
+.btn {
+  grid-column: 1/3;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+.save {
+  background-color: var(--color-primary);
+}
+
+.delete {
+  background-color: var(--color-red);
+}

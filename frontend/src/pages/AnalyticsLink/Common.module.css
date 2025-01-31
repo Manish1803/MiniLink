@@ -1,0 +1,29 @@
+.noData {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #777;
+}
+
+.tableContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 55em) {
+  .tableContainer {
+    overflow-x: auto;
+    display: grid;
+    justify-content: center;
+  }
+
+  .table {
+    max-width: 50rem;
+  }
+}

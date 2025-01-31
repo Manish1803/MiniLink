@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  padding: 0.8rem;
+  border: 1px solid var(--color-border);
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.arrow:disabled {
+  cursor: not-allowed;
+  background-color: #c4cdd5;
+}
+
+.page {
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--color-border);
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.active {
+  color: var(--color-primary);
+  font-weight: bold;
+  border: 1px solid var(--color-primary);
+}

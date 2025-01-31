@@ -1,0 +1,82 @@
+.modal {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  width: 50rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.header {
+  font-size: 1.6rem;
+  background-color: #3b3c51;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.inputContainer {
+  padding: 1rem;
+}
+
+.inputContainer label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.inputContainer input,
+.inputContainer textarea {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.required {
+  color: var(--color-red);
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ebebee;
+  margin-top: 5rem;
+  padding: 1.5rem 2rem;
+}
+
+.create {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.error {
+  font-size: 1rem;
+  color: var(--color-red);
+}

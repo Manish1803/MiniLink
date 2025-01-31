@@ -1,0 +1,13 @@
+.section {
+  padding: 2rem;
+  background-color: #f1f1f1;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+@media (max-width: 55em) {
+  .section {
+    padding: 1rem;
+  }
+}

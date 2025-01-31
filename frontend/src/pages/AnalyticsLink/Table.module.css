@@ -1,0 +1,55 @@
+.table {
+  overflow: hidden;
+  width: 100%;
+  height: fit-content;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+}
+
+.table th {
+  padding: 2rem;
+  background-color: #f3f7fd;
+  border: none;
+}
+
+.table td {
+  padding: 1.2rem;
+  border: 1px solid #f8f8f8;
+}
+
+.shortUrl {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.active {
+  color: var(--color-active);
+}
+
+.inactive {
+  color: var(--color-inactive);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btn {
+  border: none;
+  background: none;
+}
+
+.device {
+  text-transform: capitalize;
+}
+
+@media (max-width: 55em) {
+  .table {
+    max-width: 50rem;
+  }
+}
