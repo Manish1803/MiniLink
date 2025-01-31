@@ -1,6 +1,8 @@
 const User = require("./../models/User");
 const BlacklistedToken = require("./../models/BlacklistedToken");
 const jwt = require("jsonwebtoken");
+const Link = require("../models/Link");
+const LinkAccess = require("../models/LinkAccess");
 
 exports.register = async (req, res) => {
   try {
@@ -99,9 +101,15 @@ exports.logout = async (req, res) => {
 };
 
 exports.deleteAccount = async (req, res) => {
-  const userId = req.user.userId || req.user._id;
+  const userId = req.user._id;
   try {
+    const userLinks = await Link.find({ userId });
+    const linkIds = userLinks.map((link) => link._id);
+    await LinkAccess.deleteMany({ linkId: { $in: linkIds } });
+
+    await Link.deleteMany({ userId });
     await User.findByIdAndDelete(userId);
+
     res.json({
       message: "Your account has been successfully deleted.",
     });
