@@ -1,5 +1,6 @@
 import { IoSearch } from "react-icons/io5";
 import { useApp } from "./../../../../contexts/AppContext";
+import { useNavigate } from "react-router";
 
 const styles = {
   search: {
@@ -21,7 +22,12 @@ const styles = {
 };
 
 function Search() {
+  const navigate = useNavigate();
   const { searchTerm, setSearchTerm } = useApp();
+
+  const handleFocus = () => {
+    navigate("/app/links");
+  };
 
   return (
     <div style={styles.search}>
@@ -32,6 +38,7 @@ function Search() {
         style={styles.searchInput}
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
+        onFocus={handleFocus}
       />
     </div>
   );
