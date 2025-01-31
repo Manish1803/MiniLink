@@ -16,6 +16,9 @@ router.get("/:shortCode", async (req, res) => {
       return res.status(404).json({ message: "Link has expired" });
     }
 
+    const ipAddress =
+      req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+
     const ua = new UAParser(req.headers["user-agent"]);
     const device = ua.getDevice().type || "desktop";
     const userAgent = {
@@ -32,7 +35,7 @@ router.get("/:shortCode", async (req, res) => {
 
     const access = await LinkAccess.create({
       linkId: link._id,
-      ipaddress: req.ip,
+      ipaddress: ipAddress,
       userAgent: formattedUserAgent,
       originalUrl: link.originalUrl,
       shortCode: link.shortCode,
@@ -40,7 +43,7 @@ router.get("/:shortCode", async (req, res) => {
 
     link.viewCount += 1;
     await link.save();
-
+    console.log(ipAddress);
     res.redirect(link.originalUrl);
   } catch (error) {
     res.status(400).json({ message: error.message });
